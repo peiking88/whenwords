@@ -1,6 +1,6 @@
 # whenwords：一个没有代码的开源库
 
-今天我发布了 [`whenwords`](https://github.com/dbreunig/whenwords)，一个相对时间格式化库，它_不包含任何代码_。
+今天我发布了 [`whenwords`](https://github.com/dbreunig/whenwords)，一个相对时间格式化库，它不包含任何代码。
 
 `whenwords` 提供以下函数：
 
@@ -10,13 +10,13 @@
 - **human_date** — 返回上下文相关的日期字符串，如 "Today"、"Yesterday"、"Last Tuesday" 或 "March 5"，取决于日期与参考点的距离。
 - **date_range** — 将开始和结束时间戳格式化为智能日期范围，折叠冗余信息："March 5–7, 2024" 而非 "March 5, 2024 – March 7, 2024"。
 
-有_很多_库执行类似的功能。但它们都不是语言无关的。
+有很多库执行类似的功能。但它们都不是语言无关的。
 
 `whenwords` 支持 Ruby、Python、Rust、Elixir、Swift、PHP 和 Bash。我相信它在其他语言中也能工作。[这些只是我尝试并测试过的语言](https://github.com/dbreunig/whenwords-examples)。
 
 （我甚至将其实现为 Excel 公式。不过那个需要一些安装工作。）
 
-但正如我所说：`whenwords` 库_不包含代码_。相反，`whenwords` 包含规范和测试，具体包括：
+但正如我所说：`whenwords` 库不包含代码。相反，`whenwords` 包含规范和测试，具体包括：
 
 - **SPEC.md**：库应如何行为和实现的详细描述。
 - **tests.yaml**：语言无关的测试用例列表，定义为输入/输出对，任何实现都必须通过。
