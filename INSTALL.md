@@ -1,57 +1,55 @@
-# Building whenwords
+# 构建 whenwords
 
-whenwords is a **ghost library**—distributed as a specification, not code. To use it, ask a coding agent to implement it in your language.
+whenwords 是一个**幽灵库（ghost library）**——以规范形式分发，而非代码。要使用它，请让编程代理在其语言中实现它。
 
-## Quick start
+## 快速开始
 
-Give your coding agent this prompt:
+将此提示词提供给您的编程代理：
 
 ```
-Implement the whenwords library in [LANGUAGE].
+使用 [LANGUAGE] 语言实现 whenwords 库。
 
-1. Read SPEC.md for complete behavior specification
-2. Parse tests.yaml and generate a test file
-3. Implement all five functions: timeago, duration, parse_duration, 
-   human_date, date_range
-4. Run tests until all pass
-5. Place implementation in [LOCATION]
+1. 阅读 SPEC.md 了解完整的行为规范
+2. 解析 tests.yaml 并生成测试文件
+3. 实现全部五个函数：timeago、duration、parse_duration、human_date、date_range
+4. 运行测试直到全部通过
+5. 将实现放在 [LOCATION]
 
-All tests.yaml test cases must pass. See SPEC.md "Testing" section 
-for test generation examples.
+所有 tests.yaml 测试用例必须通过。参见 SPEC.md "Testing" 部分的测试生成示例。
 ```
 
-## What the agent will do
+## 代理将执行的操作
 
-1. **Read SPEC.md** — Understand behavior, edge cases, error handling
-2. **Parse tests.yaml** — Load test cases (100+ total across all functions)
-3. **Generate tests** — Create test file in target language's test framework
-4. **Implement functions** — Write the library code
-5. **Run and iterate** — Fix failures until all tests pass
+1. **阅读 SPEC.md** — 理解行为、边界情况、错误处理
+2. **解析 tests.yaml** — 加载测试用例（所有函数共 100+ 个）
+3. **生成测试** — 使用目标语言的测试框架创建测试文件
+4. **实现函数** — 编写库代码
+5. **运行并迭代** — 修复失败直到所有测试通过
 
-## Files
+## 文件
 
-| File | Purpose |
-|------|---------|
-| SPEC.md | Complete behavior specification |
-| tests.yaml | Language-agnostic test cases |
-| VERIFY.md | Post-implementation verification checklist |
+| 文件 | 用途 |
+|------|------|
+| SPEC.md | 完整的行为规范 |
+| tests.yaml | 语言无关的测试用例 |
+| VERIFY.md | 实现后验证清单 |
 
-## Verification
+## 验证
 
-After generation, run the test suite. All tests must pass:
+生成后，运行测试套件。所有测试必须通过：
 
-- 36 timeago tests
-- 26 duration tests
-- 33 parse_duration tests
-- 21 human_date tests
-- 9 date_range tests
+- 36 个 timeago 测试
+- 26 个 duration 测试
+- 33 个 parse_duration 测试
+- 21 个 human_date 测试
+- 9 个 date_range 测试
 
-Total: 125 test cases.
+总计：125 个测试用例。
 
-## Why this works
+## 为什么这样做有效
 
-Traditional libraries ship code. You trust the maintainer, manage versions, handle dependency conflicts.
+传统库发布代码。您信任维护者、管理版本、处理依赖冲突。
 
-Ghost libraries ship specifications. Your agent generates the implementation locally. You can audit every line. No supply chain. No version conflicts. The spec is the single source of truth.
+幽灵库发布规范。您的代理在本地生成实现。您可以审查每一行代码。没有供应链。没有版本冲突。规范是唯一的真实来源。
 
-For small utilities like this one, the specification is more valuable than any particular implementation.
+对于像这样的小型工具，规范比任何特定实现都更有价值。

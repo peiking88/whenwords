@@ -1,7 +1,7 @@
 version: "0.1.0"
 
-# All timestamps are Unix seconds.
-# Reference timestamp for most timeago tests: 1704067200 (2024-01-01 00:00:00 UTC)
+# 所有时间戳均为 Unix 秒。
+# 大多数 timeago 测试的参考时间戳：1704067200 (2024-01-01 00:00:00 UTC)
 
 timeago:
   - name: "just now - identical timestamps"
@@ -386,8 +386,8 @@ parse_duration:
 
 
 human_date:
-  # Reference: 2024-01-15 00:00:00 UTC (Monday)
-  # timestamp 1705276800
+  # 参考：2024-01-15 00:00:00 UTC (星期一)
+  # 时间戳 1705276800
 
   - name: "today"
     input: { timestamp: 1705276800, reference: 1705276800 }
@@ -471,7 +471,7 @@ human_date:
 
 
 date_range:
-  # Using 2024 dates
+  # 使用 2024 年日期
 
   - name: "same day"
     input: { start: 1705276800, end: 1705276800 }

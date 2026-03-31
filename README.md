@@ -1,43 +1,41 @@
-# whenwords: An Open Source Library Without Code
+# whenwords：一个没有代码的开源库
 
-Today I'm releasing [`whenwords`](https://github.com/dbreunig/whenwords), a relative time formatting library that contains _no code_.
+今天我发布了 [`whenwords`](https://github.com/dbreunig/whenwords)，一个相对时间格式化库，它_不包含任何代码_。
 
-`whenwords` delivers the following functions:
+`whenwords` 提供以下函数：
 
-- **timeago** — Converts a timestamp to a relative time string like "3 hours ago" or "in 2 days" based on a reference time.
-- **duration** — Formats a number of seconds as a human-readable duration like "2 hours, 30 minutes" or "2h 30m" in compact mode.
-- **parse_duration** — The inverse of duration—parses strings like "2h 30m" or "2 hours and 30 minutes" into seconds.
-- **human_date** — Returns contextual date strings like "Today", "Yesterday", "Last Tuesday", or "March 5" depending on how far the date is from a reference point.
-- **date_range** — Formats a start and end timestamp as a smart date range, collapsing redundant information: "March 5–7, 2024" instead of "March 5, 2024 – March 7, 2024".
+- **timeago** — 将时间戳转换为相对时间字符串，如 "3 hours ago" 或 "in 2 days"，基于参考时间。
+- **duration** — 将秒数格式化为人类可读的时长，如 "2 hours, 30 minutes" 或紧凑模式下的 "2h 30m"。
+- **parse_duration** — duration 的逆操作——将 "2h 30m" 或 "2 hours and 30 minutes" 等字符串解析为秒数。
+- **human_date** — 返回上下文相关的日期字符串，如 "Today"、"Yesterday"、"Last Tuesday" 或 "March 5"，取决于日期与参考点的距离。
+- **date_range** — 将开始和结束时间戳格式化为智能日期范围，折叠冗余信息："March 5–7, 2024" 而非 "March 5, 2024 – March 7, 2024"。
 
-There are _many_ libraries that perform similar functions. But none of them are language agnostic.
+有_很多_库执行类似的功能。但它们都不是语言无关的。
 
-`whenwords` supports Ruby, Python, Rust, Elixir, Swift, PHP, and Bash. I'm sure it works in other languages, too. [Those are just the languages I've tried and tested](https://github.com/dbreunig/whenwords-examples).
+`whenwords` 支持 Ruby、Python、Rust、Elixir、Swift、PHP 和 Bash。我相信它在其他语言中也能工作。[这些只是我尝试并测试过的语言](https://github.com/dbreunig/whenwords-examples)。
 
-(I even implemented it as Excel formulas. Though that one requires a bit of work to install.)
+（我甚至将其实现为 Excel 公式。不过那个需要一些安装工作。）
 
-But like I said: the `whenwords` library _contains no code_. Instead, `whenwords` contains specs and tests, specifically:
+但正如我所说：`whenwords` 库_不包含代码_。相反，`whenwords` 包含规范和测试，具体包括：
 
-- **SPEC.md**: A detailed description of how the library should behave and how it should be implemented.
-- **tests.yaml**: A list of language-agnostic test cases, defined as input/output pairs, that any implementation must pass.
-- **INSTALL.md**: Instructions for building `whenwords`, for you, the human.
+- **SPEC.md**：库应如何行为和实现的详细描述。
+- **tests.yaml**：语言无关的测试用例列表，定义为输入/输出对，任何实现都必须通过。
+- **INSTALL.md**：构建 `whenwords` 的说明，为您——人类——准备。
 
-The installation instructions are comically simple, just a prompt to paste into Claude, Codex, Cursor, whatever. It's short enough to print here in its entirety:
+安装说明非常简单，只是一个粘贴到 Claude、Codex、Cursor 或其他工具中的提示词。它短到可以完整打印在这里：
 
-``` markdown
-Implement the whenwords library in [LANGUAGE].
+```markdown
+使用 [LANGUAGE] 语言实现 whenwords 库。
 
-1. Read SPEC.md for complete behavior specification
-2. Parse tests.yaml and generate a test file
-3. Implement all five functions: timeago, duration, parse_duration, 
-   human_date, date_range
-4. Run tests until all pass
-5. Place implementation in [LOCATION]
+1. 阅读 SPEC.md 了解完整的行为规范
+2. 解析 tests.yaml 并生成测试文件
+3. 实现全部五个函数：timeago、duration、parse_duration、human_date、date_range
+4. 运行测试直到全部通过
+5. 将实现放在 [LOCATION]
 
-All tests.yaml test cases must pass. See SPEC.md "Testing" section 
-for test generation examples.
+所有 tests.yaml 测试用例必须通过。参见 SPEC.md "Testing" 部分的测试生成示例。
 ```
 
-Pick your language, pick your location, copy, paste, and go.
+选择您的语言，选择您的位置，复制、粘贴，然后开始。
 
-[I've written about `whenwords` here](https://www.dbreunig.com/2026/01/08/a-software-library-with-no-code.html).
+[我在这里写了关于 `whenwords` 的文章](https://www.dbreunig.com/2026/01/08/a-software-library-with-no-code.html)。
